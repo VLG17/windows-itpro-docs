@@ -426,12 +426,11 @@ Specify the cloud resources to be treated as corporate and protected by WIP.
 For each cloud resource, you may also optionally specify a proxy server from your Internal proxy servers list to route traffic for this cloud resource.
 Be aware that all traffic routed through your Internal proxy servers is considered enterprise.
 
-Separate multiple resources with the "|" delimiter. 
-If you don’t use proxy servers, you must also include the "," delimiter just before the "|". 
+Separate multiple resources with the "|" delimiter.  
 For example: 
 
 ```console
-URL <,proxy>|URL <,proxy>
+URL <proxy>|URL <proxy>
 ```
 
 Personal applications will be able to access a cloud resource that has a blank space or an invalid character, such as a trailing dot in the URL.
@@ -444,7 +443,7 @@ To stop Windows from automatically blocking these connections, you can add the `
 For example: 
 
 ```console
-URL <,proxy>|URL <,proxy>|/*AppCompat*/
+URL <proxy>|URL <proxy>|/*AppCompat*/
 ```
 
 When you use this string, we recommend that you also turn on [Azure Active Directory Conditional Access](/azure/active-directory/active-directory-conditional-access), using the **Domain joined or marked as compliant** option, which blocks apps from accessing any enterprise cloud resources that are protected by conditional access.
